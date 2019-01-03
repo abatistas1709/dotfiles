@@ -36,17 +36,17 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+ccedilla focus right
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+ccedilla focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -55,10 +55,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+ccedilla move right
+#bindsym $mod+Shift+j move left
+#bindsym $mod+Shift+k move down
+#bindsym $mod+Shift+l move up
+#bindsym $mod+Shift+ccedilla move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -200,6 +200,47 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+#####################################################################################################################
+#################                          assign applications to workspaces                       #################
+#####################################################################################################################
+
+# Assign application to start on a specific workspace
+# you can find the class with the program xprop
+
+# Workspace 8 file managers
+assign [class="Nemo|Thunar|Caja|nautilus|Nautilus"] $ws8
+
+# Workspace 10 music related
+#assign [class="Spotify|spotify"]                                                    → 10
+#fix for spotify not moving to workspace 10
+for_window [class="Spotify"] move to workspace $ws10
+
+#####################################################################################################################
+#################                          floating applications                                    #################
+#####################################################################################################################
+
+for_window [class="TelegramDesktop"] floating enable, move position center
+for_window [class="keepassxc"] floating enable, move position center
+
+#####################################################################################################################
+#################                          hotkeys                                                  #################
+#####################################################################################################################
+
+# chrome
+bindsym $mod+c exec --no-startup-id google-chrome
+
+# spotify
+bindsym $mod+m exec --no-startup-id spotify
+
+# keepassxc
+bindsym $mod+k exec --no-startup-id keepassxc
+
+# telegram
+bindsym $mod+t exec --no-startup-id ~/Telegram/Telegram
+
+# xfce-appfinder
+bindsym mod1+F3 exec --no-startup-id xfce4-appfinder
 
 #####################################################################################################################
 #################                          execute applications at boot time                        #################
