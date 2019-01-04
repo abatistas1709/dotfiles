@@ -30,7 +30,8 @@ font pango:Ubuntu 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec sakura
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -222,6 +223,7 @@ for_window [class="Spotify"] move to workspace $ws10
 
 for_window [class="TelegramDesktop"] floating enable, move position center
 for_window [class="keepassxc"] floating enable, move position center
+for_window [class="Skype"] floating enable
 
 #####################################################################################################################
 #################                          hotkeys                                                  #################
@@ -239,14 +241,15 @@ bindsym $mod+k exec --no-startup-id keepassxc
 # telegram
 bindsym $mod+t exec --no-startup-id ~/Telegram/Telegram
 
+# skype
+bindsym $mod+y exec --no-startup-id skypeforlinux
+
 # xfce-appfinder
 bindsym mod1+F3 exec --no-startup-id xfce4-appfinder
 
 #####################################################################################################################
 #################                          execute applications at boot time                        #################
 #####################################################################################################################
-
-# TRAY APPLICATIONS
 
 # Updater
 exec --no-startup-id mintupdate-launcher
@@ -263,13 +266,16 @@ exec --no-startup-id dropbox start
 # volume
 exec --no-startup-id pasystray
 
-#variety
+# variety
 exec --no-startup-id variety
 
-#telegram
+# telegram
 exec --no-startup-id ~/Telegram/Telegram 
 
-#Polybar
+# skype
+# exec --no-startup-id skypeforlinux
+
+# Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
 #####################################################################################################################
