@@ -224,6 +224,7 @@ for_window [class="Spotify"] move to workspace $ws10
 for_window [class="TelegramDesktop"] floating enable, move position center
 for_window [class="keepassxc"] floating enable, move position center
 for_window [class="Skype"] floating enable
+for_window [class="Xfce4-appfinder"] floating enable, move position center
 
 #####################################################################################################################
 #################                          hotkeys                                                  #################
@@ -286,6 +287,13 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
 # Light Locker
 exec --no-startup-id light-locker
+
+# Download wallpapers
+exec --no-startup-id ~/Dropbox/Scripts/interfacelift.sh &
+
+# Change login wallpaper
+exec --no-startup-id ~/Dropbox/Scripts/run_change_login_wallpaper.sh &
+
 
 #####################################################################################################################
 #################                          screenshots                                              #################
