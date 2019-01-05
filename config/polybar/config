@@ -132,10 +132,10 @@ font-2 = "Font Awesome 5 Free:style=Regular:size=10;0"
 font-3 = "Font Awesome 5 Free:style=Solid:size=10;0"
 
 modules-left = i3 xwindow
-modules-center = date weather
-modules-right = memory2 cpu2 
+;modules-center = 
+modules-right = memory2 cpu2 date weather
 
-separator = |
+;separator = |
 
 ;dim-value = 1.0
 
@@ -497,7 +497,7 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-prefix = "  "
 ;format-prefix-foreground = #cd1f3f
-;format-underline = #cd1f3f
+format-underline = #cd1f3f
 
 label-font = 3
 
@@ -514,7 +514,8 @@ format-padding = 2
 ;   %percentage% (default) - total cpu load
 ;   %percentage-cores% - load percentage for each core
 ;   %percentage-core[1-9]% - load percentage for specific core
-label = CPU %percentage:3%%
+;label = CPU %percentage:3%%
+label = %percentage:3%%
 
 ################################################################################
 
@@ -529,9 +530,9 @@ date = " %a %d %b"
 ;date-alt = " %d-%m-%Y"
 time = %H:%M:%S
 ;time-alt = %H:%M
-format-prefix = " "
+format-prefix = " "
 ;format-prefix-foreground = #c1941a
-;format-underline = #c1941a
+format-underline = #c1941a
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 label = %date% %time%
@@ -722,11 +723,12 @@ interval = 1
 ;   %mb_total%
 label = %percentage_used%%
 
-format = Mem <label>
+;format = Mem <label>
+format = <label>
 ;format-prefix = "  "
 format-prefix = "  "
 ;format-prefix-foreground = #3384d0
-;format-underline = #3384d0
+format-underline = #b16286
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
@@ -1005,7 +1007,7 @@ interval = 10
 format = <label>
 ;format-prefix = " "
 ;format-prefix-foreground = #3EC13F
-;format-underline = #3EC13F
+format-underline = #3EC13F
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 exec = python -u ~/.config/polybar/scripts/weather.py
@@ -1143,5 +1145,6 @@ label-maxlen = 50
 
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
+format-underline = #3384d0
 
 ###############################################################################
