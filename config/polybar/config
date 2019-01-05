@@ -132,8 +132,8 @@ font-2 = "Font Awesome 5 Free:style=Regular:size=10;0"
 font-3 = "Font Awesome 5 Free:style=Solid:size=10;0"
 
 modules-left = i3 xwindow
-;modules-center = kernel
-modules-right = memory2 cpu2 date weather
+modules-center = date weather
+modules-right = memory2 cpu2 
 
 separator = |
 
@@ -496,8 +496,8 @@ interval = 1
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-prefix = "  "
-format-prefix-foreground = #cd1f3f
-format-underline = #cd1f3f
+;format-prefix-foreground = #cd1f3f
+;format-underline = #cd1f3f
 
 label-font = 3
 
@@ -530,8 +530,8 @@ date = " %a %d %b"
 time = %H:%M:%S
 ;time-alt = %H:%M
 format-prefix = " "
-format-prefix-foreground = #c1941a
-format-underline = #c1941a
+;format-prefix-foreground = #c1941a
+;format-underline = #c1941a
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 label = %date% %time%
@@ -725,8 +725,8 @@ label = %percentage_used%%
 format = Mem <label>
 ;format-prefix = "  "
 format-prefix = "  "
-format-prefix-foreground = #3384d0
-format-underline = #3384d0
+;format-prefix-foreground = #3384d0
+;format-underline = #3384d0
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
@@ -1003,9 +1003,9 @@ format-muted-background = ${colors.background}
 type = custom/script
 interval = 10
 format = <label>
-format-prefix = " "
-format-prefix-foreground = #3EC13F
-format-underline = #3EC13F
+;format-prefix = " "
+;format-prefix-foreground = #3EC13F
+;format-underline = #3EC13F
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 exec = python -u ~/.config/polybar/scripts/weather.py
