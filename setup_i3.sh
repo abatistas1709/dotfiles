@@ -44,7 +44,7 @@ autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev
 sudo apt install -y build-essential git cmake cmake-data pkg-config libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
 
 # Ferramentas extras
-sudo apt install -y git vim dmenu i3status lxappearance variety feh compton i3lock-fancy stow
+sudo apt install -y git vim dmenu i3status lxappearance variety feh compton i3lock-fancy stow pasystray
 
 # Verifica se i3-gaps estah instalado
 i3 --version
