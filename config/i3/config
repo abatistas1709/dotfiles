@@ -239,8 +239,8 @@ bindsym $mod+m exec --no-startup-id spotify
 # keepassxc
 bindsym $mod+k exec --no-startup-id keepassxc
 
-# telegram
-bindsym $mod+t exec --no-startup-id ~/Telegram/Telegram
+# thunar
+bindsym $mod+t exec --no-startup-id thunar
 
 # skype
 bindsym $mod+y exec --no-startup-id skypeforlinux

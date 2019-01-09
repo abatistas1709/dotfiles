@@ -31,7 +31,7 @@ REQ = requests.get("http://api.openweathermap.org/data/2.5/weather?id={}&lang={}
 try:
     # HTTP CODE = OK
     if REQ.status_code == 200:
-        CURRENT = REQ.json()["weather"][0]["description"].capitalize()
+        CURRENT = REQ.json()["weather"][0]["description"].capitalize().encode('utf-8')
         TEMP = int(float(REQ.json()["main"]["temp"]))
         print("{}, {} °{}".format(CURRENT, TEMP, UNIT_KEY))
     else:

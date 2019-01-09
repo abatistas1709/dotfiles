@@ -1003,7 +1003,7 @@ format-muted-background = ${colors.background}
 
 [module/weather]
 type = custom/script
-interval = 1800
+interval = 600
 format = <label>
 ;format-prefix = " "
 ;format-prefix-foreground = #3EC13F
