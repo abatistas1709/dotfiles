@@ -133,7 +133,7 @@ font-3 = "Font Awesome 5 Free:style=Solid:size=10;0"
 
 modules-left = i3 xwindow
 ;modules-center = 
-modules-right = memory2 cpu2 date weather
+modules-right = battery memory2 cpu2 date weather
 
 ;separator = |
 
@@ -381,8 +381,12 @@ bar-empty = ─
 [module/battery]
 ;https://github.com/jaagr/polybar/wiki/Module:-battery
 type = internal/battery
-battery = BAT0
-adapter = AC0
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT1
+adapter = ADP1
+
 full-at = 100
 
 format-charging = <animation-charging> <label-charging>
