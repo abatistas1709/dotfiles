@@ -8,6 +8,7 @@
 # Check url
 # https://openweathermap.org/city/2803138
 # https://openweathermap.org/city/3448439 - Sao Paulo
+# https://openweathermap.org/city/3470353 - Barueri
 # you will the city code at the end
 # create an account on this website
 # create an api key (free)
@@ -16,8 +17,8 @@
 
 import requests
 
-CITY = "3448439"
-API_KEY = "756edce7e9d4c385ef9499a53492678c"
+CITY = "3470353"
+API_KEY = "f65e3d0242454061f252c047d8048cdd"
 UNITS = "Metric"
 UNIT_KEY = "C"
 #UNIT_KEY = "F"
@@ -30,7 +31,7 @@ REQ = requests.get("http://api.openweathermap.org/data/2.5/weather?id={}&lang={}
 try:
     # HTTP CODE = OK
     if REQ.status_code == 200:
-        CURRENT = REQ.json()["weather"][0]["description"].capitalize()
+        CURRENT = REQ.json()["weather"][0]["description"].capitalize().encode('utf-8')
         TEMP = int(float(REQ.json()["main"]["temp"]))
         print("{}, {} °{}".format(CURRENT, TEMP, UNIT_KEY))
     else:
